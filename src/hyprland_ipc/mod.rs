@@ -86,7 +86,7 @@ fn init_socket_path(socket_type: SocketType) -> hyprland::Result<PathBuf> {
         }
         None
     }
-    let old_buf = PathBuf::from("/tmp/hypr/".to_owned() + &instance);
+    let old_buf = PathBuf::from("$XDG_RUNTIME_DIR/hypr".to_owned() + &instance);
     if let Some(path) = var_path(instance.clone()) {
         p = path;
     } else if let Some(path) = uid_path(instance) {
